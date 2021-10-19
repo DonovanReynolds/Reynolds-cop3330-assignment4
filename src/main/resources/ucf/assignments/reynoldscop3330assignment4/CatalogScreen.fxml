@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ucf.assignments.reynoldscop3330assignment4.CatalogScreenController">
+   <children>
+      <TableView layoutX="10.0" layoutY="63.0" prefHeight="274.0" prefWidth="580.0">
+        <columns>
+          <TableColumn prefWidth="440.0" text="List Name" />
+          <TableColumn minWidth="0.0" prefWidth="139.0" text="Number of Items" />
+        </columns>
+      </TableView>
+      <ButtonBar layoutX="14.0" layoutY="337.0" prefHeight="49.0" prefWidth="216.0">
+        <buttons>
+          <Button mnemonicParsing="false" onAction="#saveListButton" text="Save List" />
+            <Button mnemonicParsing="false" onAction="#saveAllListsButton" prefHeight="25.0" prefWidth="94.0" text="Save All Lists" />
+        </buttons>
+      </ButtonBar>
+      <ButtonBar layoutX="300.0" layoutY="342.0" prefHeight="40.0" prefWidth="289.0">
+        <buttons>
+          <Button mnemonicParsing="false" onAction="#renameButton" text="Rename" />
+            <Button mnemonicParsing="false" onAction="#newButton" text="New" />
+            <Button mnemonicParsing="false" onAction="#deleteButton" text="Delete" />
+        </buttons>
+      </ButtonBar>
+      <Label alignment="CENTER" layoutX="250.0" layoutY="14.0" prefHeight="40.0" prefWidth="100.0" text="Catalog" textAlignment="CENTER">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

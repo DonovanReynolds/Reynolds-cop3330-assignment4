@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.scene.text.Font?>
+<AnchorPane prefHeight="186.0" prefWidth="348.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ucf.assignments.reynoldscop3330assignment4.ConfirmListDeleteController">
+    <children>
+        <Label layoutX="14.0" layoutY="32.0" prefHeight="53.0" prefWidth="315.0" text="Are you sure you want to delete this list?">
+            <font>
+                <Font name="System Bold" size="16.0" />
+            </font>
+        </Label>
+        <Button fx:id="cancelButton" layoutX="218.0" layoutY="115.0" mnemonicParsing="false" onAction="#onCancelClick" prefHeight="25.0" prefWidth="80.0" text="Cancel" />
+        <Button fx:id="confirmButton" layoutX="46.0" layoutY="115.0" mnemonicParsing="false" onAction="#onConfirmClick" prefHeight="25.0" prefWidth="80.0" text="Confirm" />
+    </children>
+</AnchorPane>
