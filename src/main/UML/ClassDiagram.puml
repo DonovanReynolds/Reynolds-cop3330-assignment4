@@ -1,0 +1,231 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+class AddItemController {
+-TextField Name
+-DatePicker date
+-TextField description
+-SceneSwap swap
+
+void SwitchToListViewer(ActionEvent)
+}
+
+class StartupScreenController{
+
+-Button create
+-Button loadOne
+-Button loadAll
+-SceneSwap swap
+
++onCreatePush(ActionEvent)
++oneLoadOnePush(ActionEvent)
++onLoadAllPush(ActionEvent)
+
+}
+
+class CreateNewListScreenController {
+-TextField listName
+-Button submitButton
+-SceneSwap swap
+
+void onButtonPush(ActionEvent)
+}
+
+class ConfirmDeleteController {
+-Button confirmButton
+-Button cancelButton
+-SceneSwap swap
+
+void onConfirmClick(ActionEvent)
+void onCancelClick(ActionEvent)
+}
+
+class ConfirmListDeleteController {
+-Button confirmButton
+-Button cancelButton
+-SceneSwap swap
+
+void onConfirmClick(ActionEvent)
+void onCancelClick(ActionEvent)
+}
+
+class CatalogScreenController {
+
+-TableView tableView
+-TableColumn nameColumn
+-TableColumn sizeColumn
+-SceneSwap swap
+
++initialize()
+
+void saveListButton(ActionEvent)
+void saveAllListsButton(ActionEvent)
+void renameButton(ActionEvent)
+void newButton(ActionEvent)
+void deleteButton(ActionEvent)
+}
+
+class ListViewerController {
+
+-TextArea listName
+-TableView<ToDoItem> table
+-TableColumn listNamesColumn
+-tableColumn completeColumn
+-CheckBox completed
+-TextArea itemDescription
+-TextArea itemDate
+-TextArea itemName
+-SceneSwap swap
+
+
++seeAllItems(ActionEvent)
++SeeOnlyCompleteItems(ActionEvent)
++SeeOnlyIncompleteItems(ActionEvent)
++returnToLists(ActionEvent)
++deleteItem(ActionEvent)
++editSelectedItem(ActionEvent)
++newItemButton(ActionEvent)
+
+}
+
+class LoadListsController {
++static Stage stage
+-Stage LoadListsStage
+-SceneSwap swap
+
+-TableView table
+-TableColumn checkBoxes
+-TableColumn listNames
+
++LoadListsController(Stage)
+
+-void LoadListsButtonClicked(ActionEvent)
+-void loadBoxChecked(ActionEvent)
+}
+
+class SceneSwap {
+-Stage stage
+-Scene scene
+-Parent root
+
+
++SceneSwap()
++SwitchToAddItemScreen(ActionEvent)
++SwitchToCatalogScreen(ActionEvent)
++SwitchToConfirmDelete(ActionEvent)
++SwitchToConfirmListDelete(ActionEvent)
++SwitchToCreateNewList(ActionEvent)
++SwitchToListViewer(ActionEvent)
++SwitchToStartupScreen(ActionEvent)
+
+}
+
+class ToDoItem {
+-SimpleStringProperty name
+-SimpleStringProperty description
+-LocalDate date
+-boolean complete
+
++String getName()
++void setName(String)
++String getDate()
++void setDate(LocalDate)
++String getDesc()
++void setDesc(String)
++String isComplete()
++void setComplete(String)
+
++ToDoItem(String, String, LocalDate)
++String toString()
+}
+
+class ToDoList {
+-SimpleStringProperty name
+-ArrayList<ToDoItem> list
+-SimpleStringProperty size
+
++String getName()
++void setName(String)
++String getSize()
++setSize(String)
++ArrayList<ToDoItem> getAllItems()
++setAllItems(ArrayList<String>)
+
++ToDoList(String)
+
++void addItem(ToDoItem)
++void removeItem(ToDoItem)
++void editItem(ToDoItem,ToDoItem)
+-void updateSize()
+
++toString()
+}
+
+class Catalog {
+-ArrayList<ToDoList> catalog
+-int listSize
+
++void addList(ToDoList)
++void deleteList(ToDoList)
++void editListName(String, String)
+
++ArrayList<String> getCatalog()
+-void updateSize()
++void getCatalog()
++setCatalog(ArrayList<String>)
++getListSize()
++setListSize(int)
++void addList(ToDoList)
++void deleteList(ToDoList)
++void editList(String,String)
+
++Catalog()
+}
+
+class ToDoApplication {
++start(Stage)
++main()
+}
+
+class DataUtil {
+-File file
+
++DataUtil(String)
+
++static Catalog loadLists()
++static Catalog loadLists(LinkedList<String> listNames)
++static boolean saveAll(Catalog)
++static boolean saveOne(ToDoList)
+}
+
+class FileUtil {
+-File file
+-boolean exists
+
++FileUtil(String)
+
++File makeDirectory(String)
++File getDirectory()
++BufferedReader makeReader()
++BufferedWriter makeWriter()
+
+}
+
+Catalog *-- ToDoList
+ToDoList *-- ToDoItem
+
+note "File Utility Classes" as n1
+n1 . DataUtil
+n1 .. FileUtil
+
+note "Scene Swaps" as n2
+n2 .-. AddItemController
+n2 .. CatalogScreenController
+n2 .-. ConfirmDeleteController
+n2 .-. ConfirmListDeleteController
+n2 .- CreateNewListScreenController
+n2 .-. ListViewerController
+n2 .. StartupScreenController
+n2 . SceneSwap
+
+@enduml
