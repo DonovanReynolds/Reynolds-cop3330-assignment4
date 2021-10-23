@@ -5,10 +5,10 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.Pane?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="149.0" prefWidth="268.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ucf.assignments.reynoldscop3330assignment4.CreateNewListScreenController">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="149.0" prefWidth="268.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ucf.assignments.CreateNewListScreenController">
    <children>
       <Label layoutX="14.0" layoutY="38.0" prefHeight="19.0" prefWidth="41.0" text="Name:" />
-      <TextField fx:id="nameInput" layoutX="60.0" layoutY="35.0" />
+      <TextField fx:id="nameInput" layoutX="60.0" layoutY="35.0" promptText="Enter Name..." />
       <Button fx:id="submitButton" layoutX="107.0" layoutY="89.0" mnemonicParsing="false" onAction="#onButtonPush" text="Submit" />
    </children>
 </Pane>

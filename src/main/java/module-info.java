@@ -4,6 +4,6 @@ module ucf.assignments.reynoldscop3330assignment4 {
     requires javafx.graphics;
 
 
-    opens ucf.assignments.reynoldscop3330assignment4 to javafx.fxml;
-    exports ucf.assignments.reynoldscop3330assignment4;
+    opens ucf.assignments to javafx.fxml;
+    exports ucf.assignments;
 }

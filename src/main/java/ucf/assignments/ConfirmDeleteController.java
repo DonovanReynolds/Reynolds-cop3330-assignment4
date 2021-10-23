@@ -1,4 +1,4 @@
-package ucf.assignments.reynoldscop3330assignment4;
+package ucf.assignments;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -17,14 +17,15 @@ public class ConfirmDeleteController {
     private Button cancelButton;
 
     @FXML
-    protected void onConfirmClick(ActionEvent event) throws IOException {
-        //Deletes list
+    protected boolean onConfirmClick(ActionEvent event) throws IOException {
         swap.switchToListViewer(event);
+        return true;
     }
 
     @FXML
-    protected void onCancelClick(ActionEvent event) throws IOException {
+    protected boolean onCancelClick(ActionEvent event) throws IOException {
         //Go back to previous scene
         swap.switchToListViewer(event);
+        return false;
     }
 }

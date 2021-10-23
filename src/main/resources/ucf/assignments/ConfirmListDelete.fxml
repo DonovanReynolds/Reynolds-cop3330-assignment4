@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.*?>
 
 <?import javafx.scene.text.Font?>
-<AnchorPane prefHeight="186.0" prefWidth="348.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ucf.assignments.reynoldscop3330assignment4.ConfirmListDeleteController">
+<AnchorPane prefHeight="186.0" prefWidth="348.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ucf.assignments.ConfirmListDeleteController">
     <children>
         <Label layoutX="14.0" layoutY="32.0" prefHeight="53.0" prefWidth="315.0" text="Are you sure you want to delete this list?">
             <font>

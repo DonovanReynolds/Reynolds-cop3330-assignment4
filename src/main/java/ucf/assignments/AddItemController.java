@@ -1,14 +1,9 @@
-package ucf.assignments.reynoldscop3330assignment4;
+package ucf.assignments;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Node;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
-import javafx.stage.Stage;
 
 import java.io.IOException;
 
@@ -17,9 +12,9 @@ public class AddItemController {
     private SceneSwap swap = new SceneSwap();
 
     @FXML
-    private TextField Name;
+    private TextField name;
     @FXML
-    private TextField Description;
+    private TextField description;
     @FXML
     private DatePicker date;
 

@@ -1,4 +1,4 @@
-package ucf.assignments.reynoldscop3330assignment4;
+package ucf.assignments;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
@@ -15,14 +15,6 @@ public class SceneSwap {
     private Stage stage;
     private Scene scene;
     private Parent root;
-/*
-    public SceneSwap(Stage stage, Scene scene, Parent root) {
-        this.stage = stage;
-        this.scene = scene;
-        this.root = root;
-    }
-
- */
 
     public SceneSwap()
     {
@@ -36,6 +28,7 @@ public class SceneSwap {
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
+        stage.setResizable(false);
         stage.show();
 
     }
@@ -45,6 +38,7 @@ public class SceneSwap {
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
+        stage.setResizable(false);
         stage.show();
 
     }
@@ -54,6 +48,7 @@ public class SceneSwap {
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
+        stage.setResizable(false);
         stage.show();
     }
 
@@ -62,6 +57,7 @@ public class SceneSwap {
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
+        stage.setResizable(false);
         stage.show();
     }
 
@@ -70,6 +66,7 @@ public class SceneSwap {
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
+        stage.setResizable(false);
         stage.show();
     }
 
@@ -78,6 +75,7 @@ public class SceneSwap {
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
+        stage.setResizable(false);
         stage.show();
     }
 
@@ -86,6 +84,7 @@ public class SceneSwap {
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
+        stage.setResizable(false);
         stage.show();
     }
 
