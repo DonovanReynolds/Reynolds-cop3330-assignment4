@@ -19,7 +19,6 @@ tasks.withType(JavaCompile) {
 }
 
 application {
-    mainModule = 'ucf.assignments'
     mainClass = 'ucf.assignments.ToDoApplication'
 }
 
