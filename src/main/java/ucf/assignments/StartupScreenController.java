@@ -3,6 +3,10 @@ package ucf.assignments;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+/*
+ *  UCF COP3330 Fall 2021 Assignment 4 Solution
+ *  Copyright 2021 Donovan Reynolds
+ */
 
 import java.io.IOException;
 

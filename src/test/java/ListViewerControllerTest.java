@@ -1,4 +1,8 @@
-import org.junit.jupiter.api.BeforeAll;
+/*
+ *  UCF COP3330 Fall 2021 Assignment 4 Solution
+ *  Copyright 2021 Donovan Reynolds
+ */
+
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import ucf.assignments.ToDoItem;
