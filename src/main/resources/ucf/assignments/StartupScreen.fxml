@@ -5,8 +5,7 @@
 
 <AnchorPane prefHeight="219.0" prefWidth="237.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ucf.assignments.StartupScreenController">
    <children>
-      <Button fx:id="create" layoutX="69.0" layoutY="43.0" mnemonicParsing="false" onAction="#onCreatePush" text="Create New List" />
-      <Button fx:id="loadAll" layoutX="76.0" layoutY="152.0" mnemonicParsing="false" onAction="#onLoadAllPush" text="Load All Lists" />
-      <Button fx:id="loadOne" layoutX="87.0" layoutY="97.0" mnemonicParsing="false" onAction="#onLoadOnePush" text="Load List" />
+      <Button fx:id="create" layoutX="69.0" layoutY="63.0" mnemonicParsing="false" onAction="#onCreatePush" text="Create New List" />
+      <Button fx:id="loadAll" layoutX="76.0" layoutY="128.0" mnemonicParsing="false" onAction="#onLoadAllPush" text="Load All Lists" />
    </children>
 </AnchorPane>

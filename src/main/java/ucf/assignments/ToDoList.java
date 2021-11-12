@@ -19,6 +19,14 @@ public class ToDoList {
         allItems = new ArrayList<>();
     }
 
+    public ToDoList(String name, ArrayList<ToDoItem> allItems) {
+        this.name = new SimpleStringProperty(name);
+        size = new SimpleStringProperty(Integer.toString(allItems.size()));
+        this.allItems = allItems;
+    }
+
+
+
     public void addItem(ToDoItem item)
     {
         allItems.add(item);
@@ -37,7 +45,7 @@ public class ToDoList {
         allItems.add(updated);
     }
 
-    private void updateSize()
+    public void updateSize()
     {
         size = new SimpleStringProperty("" + allItems.size());
     }
@@ -62,11 +70,12 @@ public class ToDoList {
         this.name.set(name);
     }
 
-    public String getSize() {
-        return size.get();
+    public int getSize() {
+        return Integer.parseInt(size.get());
     }
 
     public SimpleStringProperty sizeProperty() {
+        System.out.println(size);
         return size;
     }
 

@@ -29,14 +29,11 @@ public class StartupScreenController {
     }
 
     @FXML
-    protected void onLoadOnePush(ActionEvent event)
-    {
-        //switch to the load one list scene
-    }
-
-    @FXML
-    protected void onLoadAllPush()
-    {
+    protected void onLoadAllPush(ActionEvent event) throws IOException {
+        Catalog catalog = DataUtil.loadLists();
+        assert catalog != null;
+        CatalogScreenController.setAllLists(catalog);
+        swap.switchToCatalogScreen(event);
         //load every list able then switch scenes
 
     }

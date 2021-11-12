@@ -12,6 +12,10 @@ public class Catalog {
 
     public Catalog() {
         catalog = new ArrayList<>();
+    }
+
+    public Catalog(ArrayList<ToDoList> lists) {
+        catalog = lists;
         listSize = 0;
     }
 

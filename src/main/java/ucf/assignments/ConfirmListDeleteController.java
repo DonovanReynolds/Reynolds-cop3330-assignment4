@@ -21,16 +21,16 @@ public class ConfirmListDeleteController {
     private Button cancelButton;
 
     @FXML
-    protected boolean onConfirmClick(ActionEvent event) throws IOException {
+    protected void onConfirmClick(ActionEvent event) throws IOException {
         //Deletes list
+        CatalogScreenController.deleteList();
         swap.switchToCatalogScreen(event);
-        return true;
+
     }
 
     @FXML
-    protected boolean onCancelClick(ActionEvent event) throws IOException {
+    protected void onCancelClick(ActionEvent event) throws IOException {
         //Go back to previous scene
         swap.switchToCatalogScreen(event);
-        return false;
     }
 }

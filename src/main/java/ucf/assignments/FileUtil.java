@@ -8,33 +8,59 @@ import java.io.*;
 
 public class FileUtil {
 
-    private File file;
-    private boolean exists;
 
-
-    public FileUtil(String path)
+    public static void makeDirectory()
     {
-        file = new File(path);
-        exists = file.exists();
+        new File(getDirectory() + "List_Data").mkdir();
     }
 
-    public File makeDirectory(String directory)
+    public static File getDirectory()
     {
-        //makes a directory with the specified file
-        //returns the file to the new directory
-        return null;
+        return new File(System.getProperty("user.dir"));
     }
 
-    public File getDirectory()
+    public static BufferedReader makeReader(String fileName) throws IOException {
+        return new BufferedReader(new FileReader(getOutput(fileName)));
+
+    }
+
+    public static BufferedWriter makeWriter(String fileName , boolean newFile) throws IOException {
+        return new BufferedWriter(new FileWriter(getOutput(fileName) , newFile));
+    }
+
+    public static void writeToFile(String string, String fileOutput) throws IOException
     {
-        return file;
+        BufferedWriter write = FileUtil.makeWriter(fileOutput , false);
+
+        write.write(string);
+        write.close();
     }
 
-    public BufferedReader makeReader() throws FileNotFoundException {
-        return new BufferedReader(new FileReader(file));
+    public static void appendToFile(String string, String fileOutput) throws IOException
+    {
+        BufferedWriter write = FileUtil.makeWriter(fileOutput , true);
+
+        write.write(string);
+        write.close();
     }
 
-    public BufferedWriter makeWriter() throws IOException {
-        return new BufferedWriter(new FileWriter(file));
+    public static File getOutput(String fileOutput) throws IOException {
+        if (!new File(getDirectory() + "\\List_Data").exists())
+        {
+            makeDirectory();
+        }
+        //System.out.println(getDirectory() + "\\List_Data");
+        File outputFile = new File(getDirectory() + "\\List_Data\\" + fileOutput);
+        if (!outputFile.exists())
+        {
+            outputFile.createNewFile();
+        }
+        else
+        {
+            //System.out.println("NoFileCreated");
+        }
+        //System.out.println(fileOutput);
+        return outputFile;
     }
+
 }

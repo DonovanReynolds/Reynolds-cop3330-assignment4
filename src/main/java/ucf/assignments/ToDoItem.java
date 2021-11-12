@@ -4,6 +4,7 @@ package ucf.assignments;
  *  Copyright 2021 Donovan Reynolds
  */
 
+import javafx.beans.property.SimpleBooleanProperty;
 import javafx.beans.property.SimpleStringProperty;
 
 import java.time.LocalDate;
@@ -13,13 +14,20 @@ public class ToDoItem {
     private SimpleStringProperty name;
     private SimpleStringProperty description;
     private LocalDate date;
-    private boolean isComplete;
+    private SimpleBooleanProperty isComplete;
 
-    public ToDoItem(SimpleStringProperty name, SimpleStringProperty description, LocalDate date) {
-        this.name = name;
-        this.description = description;
+    public ToDoItem(String name, String description, LocalDate date) {
+        this.name = new SimpleStringProperty(name);
+        this.description = new SimpleStringProperty(description);
         this.date = date;
-        this.isComplete = false;
+        this.isComplete = new SimpleBooleanProperty(false);
+    }
+
+    public ToDoItem(String name, String description, LocalDate date, boolean isComplete) {
+        this.name = new SimpleStringProperty(name);
+        this.description = new SimpleStringProperty(description);
+        this.date = date;
+        this.isComplete = new SimpleBooleanProperty(isComplete);
     }
 
     public String getName() {
@@ -54,12 +62,16 @@ public class ToDoItem {
         this.date = date;
     }
 
-    public boolean isComplete() {
+    public boolean isIsComplete() {
+        return isComplete.get();
+    }
+
+    public SimpleBooleanProperty isCompleteProperty() {
         return isComplete;
     }
 
-    public void setComplete(boolean complete) {
-        isComplete = complete;
+    public void setIsComplete(boolean isComplete) {
+        this.isComplete.set(isComplete);
     }
 
     @Override

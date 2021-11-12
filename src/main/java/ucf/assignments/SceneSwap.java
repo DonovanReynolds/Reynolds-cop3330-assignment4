@@ -83,8 +83,8 @@ public class SceneSwap {
         stage.show();
     }
 
-    public void switchToStartupScreen(ActionEvent event) throws IOException{
-        root = FXMLLoader.load(getClass().getResource("ListViewerScreen.fxml"));
+    public void switchToEditListScreen(ActionEvent event) throws IOException{
+        root = FXMLLoader.load(getClass().getResource("EditListScreen.fxml"));
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);

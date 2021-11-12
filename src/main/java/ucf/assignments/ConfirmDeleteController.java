@@ -21,15 +21,15 @@ public class ConfirmDeleteController {
     private Button cancelButton;
 
     @FXML
-    protected boolean onConfirmClick(ActionEvent event) throws IOException {
+    protected void onConfirmClick(ActionEvent event) throws IOException {
+        ListViewerController.deleteItem();
         swap.switchToListViewer(event);
-        return true;
+
     }
 
     @FXML
-    protected boolean onCancelClick(ActionEvent event) throws IOException {
+    protected void onCancelClick(ActionEvent event) throws IOException {
         //Go back to previous scene
         swap.switchToListViewer(event);
-        return false;
     }
 }

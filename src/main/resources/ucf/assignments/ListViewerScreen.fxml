@@ -1,30 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.CheckBox?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.SplitPane?>
-<?import javafx.scene.control.TableColumn?>
-<?import javafx.scene.control.TableView?>
-<?import javafx.scene.control.TextField?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.ColumnConstraints?>
-<?import javafx.scene.layout.GridPane?>
-<?import javafx.scene.layout.RowConstraints?>
-<?import javafx.scene.text.Font?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="586.0" prefWidth="829.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ucf.assignments.ListViewerController">
+<AnchorPane prefHeight="586.0" prefWidth="829.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ucf.assignments.ListViewerController">
    <children>
       <SplitPane dividerPositions="0.44619105199516323" prefHeight="586.0" prefWidth="829.0">
         <items>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="398.0" prefWidth="250.0" SplitPane.resizableWithParent="false">
                <children>
                   <Label layoutX="14.0" layoutY="28.0" text="Name:" />
-                  <Label layoutX="69.0" layoutY="28.0" text="ToDoListName" />
-                  <TableView layoutX="4.0" layoutY="56.0" prefHeight="424.0" prefWidth="356.0">
+                  <Label fx:id="listName" layoutX="69.0" layoutY="28.0" text="ToDoListName" />
+                  <TableView fx:id="table" layoutX="4.0" layoutY="56.0" prefHeight="424.0" prefWidth="356.0">
                     <columns>
-                      <TableColumn prefWidth="222.0" resizable="false" text="Item Name" />
-                      <TableColumn prefWidth="61.0" resizable="false" text="Complete" />
+                      <TableColumn fx:id="listNamesColumn" prefWidth="222.0" resizable="false" text="Item Name" />
+                      <TableColumn fx:id="completeColumn" prefWidth="61.0" resizable="false" text="Complete" />
                     </columns>
                   </TableView>
                   <Button layoutX="194.0" layoutY="497.0" mnemonicParsing="false" onAction="#seeOnlyIncompleteItems" prefHeight="25.0" prefWidth="87.0" text="Incomplete" />
@@ -47,7 +38,7 @@
                         <RowConstraints maxHeight="367.0" minHeight="10.0" prefHeight="367.0" vgrow="SOMETIMES" />
                     </rowConstraints>
                      <children>
-                        <CheckBox mnemonicParsing="false" prefHeight="17.0" prefWidth="127.0" text="Completed">
+                        <CheckBox fx:id="completed" mnemonicParsing="false" onAction="#markAsComplete" prefHeight="17.0" prefWidth="127.0" text="Completed">
                            <font>
                               <Font size="13.0" />
                            </font>
@@ -63,14 +54,14 @@
                            </font>
                         </Label>
                         <Label alignment="TOP_LEFT" contentDisplay="TOP" prefHeight="211.0" prefWidth="301.0" text="Description:" GridPane.rowIndex="3" />
-                        <TextField GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                        <TextField GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                        <TextField alignment="TOP_LEFT" prefHeight="284.0" prefWidth="182.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                        <TextField fx:id="itemName" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <TextField fx:id="itemDate" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <TextArea fx:id="itemDescription" prefHeight="200.0" prefWidth="200.0" wrapText="true" GridPane.columnIndex="1" GridPane.rowIndex="3" />
                      </children>
                   </GridPane>
                   <Button layoutX="14.0" layoutY="533.0" mnemonicParsing="false" onAction="#deleteItem" prefHeight="25.0" prefWidth="60.0" text="Delete" />
                   <Button layoutX="118.0" layoutY="533.0" mnemonicParsing="false" onAction="#newItemButton" prefHeight="25.0" prefWidth="60.0" text="New" />
-                  <Button layoutX="222.0" layoutY="533.0" mnemonicParsing="false" onAction="#editSelectedItem" prefHeight="25.0" prefWidth="60.0" text="Edit" />
+                  <Button layoutX="222.0" layoutY="533.0" mnemonicParsing="false" onAction="#editSelectedItem" prefHeight="25.0" prefWidth="60.0" text="Save" />
                </children>
             </AnchorPane>
         </items>
