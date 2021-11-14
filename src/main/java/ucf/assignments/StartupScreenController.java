@@ -18,9 +18,6 @@ public class StartupScreenController {
     private Button create;
 
     @FXML
-    private Button loadOne;
-
-    @FXML
     private Button loadAll;
 
     @FXML

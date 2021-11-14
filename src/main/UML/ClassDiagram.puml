@@ -4,7 +4,7 @@
 class AddItemController {
 -TextField Name
 -DatePicker date
--TextField description
+-TextArea description
 -SceneSwap swap
 
 void SwitchToListViewer(ActionEvent)
@@ -13,22 +13,20 @@ void SwitchToListViewer(ActionEvent)
 class StartupScreenController{
 
 -Button create
--Button loadOne
 -Button loadAll
 -SceneSwap swap
 
 +onCreatePush(ActionEvent)
-+oneLoadOnePush(ActionEvent)
 +onLoadAllPush(ActionEvent)
 
 }
 
 class CreateNewListScreenController {
--TextField listName
+-TextField nameInput
 -Button submitButton
 -SceneSwap swap
 
-void onButtonPush(ActionEvent)
++onButtonPush(ActionEvent)
 }
 
 class ConfirmDeleteController {
@@ -36,8 +34,8 @@ class ConfirmDeleteController {
 -Button cancelButton
 -SceneSwap swap
 
-void onConfirmClick(ActionEvent)
-void onCancelClick(ActionEvent)
++onConfirmClick(ActionEvent)
++onCancelClick(ActionEvent)
 }
 
 class ConfirmListDeleteController {
@@ -45,39 +43,70 @@ class ConfirmListDeleteController {
 -Button cancelButton
 -SceneSwap swap
 
-void onConfirmClick(ActionEvent)
-void onCancelClick(ActionEvent)
++onConfirmClick(ActionEvent)
++onCancelClick(ActionEvent)
+}
+
+class EditListController
+{
+-SceneSwap swap
+-button submitButton
+-TextField nameInput
+-ToDoList tempList
+
++setTempList(ToDoList)
++onButtonPush(ActionEvent)
+
 }
 
 class CatalogScreenController {
 
--TableView tableView
+-TableView table
 -TableColumn nameColumn
 -TableColumn sizeColumn
 -SceneSwap swap
+-ToDoList selectedList
+-ArrayList<ToDoList> allLists
+
 
 +initialize()
 
-void saveListButton(ActionEvent)
-void saveAllListsButton(ActionEvent)
-void renameButton(ActionEvent)
-void newButton(ActionEvent)
-void deleteButton(ActionEvent)
++getCatalogLists()
++changeName(String, ToDoList)
++setAllLists(Catalog)
++deleteList()
++deleteList(ToDoList)
+-setSelected(int)
++addList(ToDoList)
+
++saveListButton(ActionEvent)
++saveAllListsButton(ActionEvent)
++renameButton(ActionEvent)
++newButton(ActionEvent)
++deleteButton(ActionEvent)
 }
 
 class ListViewerController {
 
--TextArea listName
+-TextField listName
 -TableView<ToDoItem> table
 -TableColumn listNamesColumn
 -tableColumn completeColumn
 -CheckBox completed
 -TextArea itemDescription
--TextArea itemDate
--TextArea itemName
+-TextField itemDate
+-TextField itemName
 -SceneSwap swap
+-int currentView
+-ToDoItem selectedItem
+-ArrayList<ToDoItem> allItems
 
-
++(ArrayList<ToDoItem>) getList()
++initialize()
++setList(ToDoList)
+-setSelected(int)
++deleteItem()
+-showItem(ToDoItem)
 +seeAllItems(ActionEvent)
 +SeeOnlyCompleteItems(ActionEvent)
 +SeeOnlyIncompleteItems(ActionEvent)
@@ -88,20 +117,7 @@ class ListViewerController {
 
 }
 
-class LoadListsController {
-+static Stage stage
--Stage LoadListsStage
--SceneSwap swap
 
--TableView table
--TableColumn checkBoxes
--TableColumn listNames
-
-+LoadListsController(Stage)
-
--void LoadListsButtonClicked(ActionEvent)
--void loadBoxChecked(ActionEvent)
-}
 
 class SceneSwap {
 -Stage stage
@@ -117,6 +133,7 @@ class SceneSwap {
 +SwitchToCreateNewList(ActionEvent)
 +SwitchToListViewer(ActionEvent)
 +SwitchToStartupScreen(ActionEvent)
++SwitchToEditListScreen(ActionEvent)
 
 }
 
@@ -192,22 +209,22 @@ class DataUtil {
 
 +DataUtil(String)
 
-+static Catalog loadLists()
-+static Catalog loadLists(LinkedList<String> listNames)
-+static boolean saveAll(Catalog)
-+static boolean saveOne(ToDoList)
++Catalog loadLists()
++boolean saveAll(Catalog)
++boolean saveOne(ToDoList)
+-itemExists(ToDoItem,ToDoList)
+-listExists(ToDoList,Catalog)
+
 }
 
 class FileUtil {
--File file
--boolean exists
-
-+FileUtil(String)
-
-+File makeDirectory(String)
++makeDirector()
 +File getDirectory()
-+BufferedReader makeReader()
-+BufferedWriter makeWriter()
++BufferedReader makeReader(String)
++BufferedWriter makeWriter(String, boolean)
++writeToFile(String, String)
++appendToFile(String, String)
++File getOutput(String)
 
 }
 
@@ -227,5 +244,6 @@ n2 .- CreateNewListScreenController
 n2 .-. ListViewerController
 n2 .. StartupScreenController
 n2 . SceneSwap
+n2 .. EditListController
 
 @enduml
